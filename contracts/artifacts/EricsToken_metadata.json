@@ -254,11 +254,11 @@
 	},
 	"sources": {
 		"contracts/EricsToken.sol": {
-			"keccak256": "0x3585691bb0c79c758a7b0c4be91368de59b10d581b35f1453de175b1b7b4956c",
+			"keccak256": "0x2e78bb34cb3972227d7fd0d9253c24eaeab8686eb6a980a2a2e827549fa9ee1e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://def46331ee808a4fdae91173c4944d1bec9fd7a7c08fd64e474ad43ab2ce61c8",
-				"dweb:/ipfs/QmZVuhBdEHkHjjPm4dpvvzFDjoFtEDPL6ZfohAFBaYoEi6"
+				"bzz-raw://f7759be990f7e864345bc444de378cb315725009c00d7e8a49dda5c9ba2d34ba",
+				"dweb:/ipfs/QmS6dC9JfLxfvCkZuTyUpq4c2fvcZWNGnjornw94pKdqD6"
 			]
 		}
 	},

@@ -25,7 +25,7 @@ contract EricsToken {
         balanceOf[owner] = totalSupply;
     }
 
-    function transfer(address _to, uint256 _value) public returns (bool success) {
+    function transfer(address _to, uint256 _value) public onlyOwner returns (bool success) {
         require(balanceOf[msg.sender] >= _value, "Insufficient balance");
         require(_to != address(0), "Invalid address");
 
@@ -35,6 +35,7 @@ contract EricsToken {
         emit Transfer(msg.sender, _to, _value);
         return true;
     }
+
 
     function mint(uint256 _value) public onlyOwner returns (bool success) {
         uint256 valueToMint = _value * 10 ** uint256(decimals);
