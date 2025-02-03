@@ -572,11 +572,11 @@
 	},
 	"sources": {
 		"contracts/EricsToken.sol": {
-			"keccak256": "0x942e9a51c47c3acf987088e3ec08eba42516aaeeb9612ed5e539fabb17a53279",
+			"keccak256": "0xc69c75578e21ca5ff8b9fb1996a9241438f6fa9854452b9d0cef4e259d8bbd81",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8fbcb106b1a75a939775842472e6cab2b15601d47f36e2498fcd385ad3415446",
-				"dweb:/ipfs/QmaYFUgECQurr4kZqDy3xJxoD4yDVQkrEkCRHyz1CvCswE"
+				"bzz-raw://0a505676bdf8e8c9ba693393ebe896e0b47add2fe866d81934c1b8a4191966c1",
+				"dweb:/ipfs/QmRJgmztkX5mdWE2wLkteYVKy8MXhrtFRu2u8mvGBoqwHp"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol": {
