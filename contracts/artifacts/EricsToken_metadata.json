@@ -559,7 +559,7 @@
 		"compilationTarget": {
 			"contracts/EricsToken.sol": "EricsToken"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
