@@ -1,59 +1,20 @@
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract EricsToken {
-    string public name = "EricsToken";
-    string public symbol = "ETK";
-    uint8 public decimals = 18;
-    uint256 public totalSupply;
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol";
 
-    address public owner;
-    mapping(address => uint256) public balanceOf;
+contract EricsToken is ERC20, Ownable {
 
-    event Transfer(address indexed from, address indexed to, uint256 value);
-    event Mint(address indexed to, uint256 value);
-    event Burn(address indexed from, uint256 value);
-
-    modifier onlyOwner() {
-        require(msg.sender == owner, "Only owner can call this function");
-        _;
+    constructor(uint256 initialSupply, address initialOwner) ERC20("EricsToken", "ETK") Ownable(initialOwner) {
+        _mint(initialOwner, initialSupply);
     }
 
-    constructor(uint256 _initialSupply) {
-        owner = msg.sender;
-        totalSupply = _initialSupply * 10 ** uint256(decimals);
-        balanceOf[owner] = totalSupply;
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
     }
 
-    function transfer(address _to, uint256 _value) public onlyOwner returns (bool success) {
-        require(balanceOf[msg.sender] >= _value, "Insufficient balance");
-        require(_to != address(0), "Invalid address");
-
-        balanceOf[msg.sender] -= _value;
-        balanceOf[_to] += _value;
-
-        emit Transfer(msg.sender, _to, _value);
-        return true;
-    }
-
-
-    function mint(uint256 _value) public onlyOwner returns (bool success) {
-        uint256 valueToMint = _value * 10 ** uint256(decimals);
-        totalSupply += valueToMint;
-        balanceOf[owner] += valueToMint;
-
-        emit Mint(owner, valueToMint);
-        return true;
-    }
-
-    function burn(uint256 _value) public onlyOwner returns (bool success) {
-        uint256 valueToBurn = _value * 10 ** uint256(decimals);
-        require(balanceOf[owner] >= valueToBurn, "Insufficient balance to burn");
-
-        totalSupply -= valueToBurn;
-        balanceOf[owner] -= valueToBurn;
-
-        emit Burn(owner, valueToBurn);
-        return true;
+    function burn(uint256 amount) public onlyOwner {
+        _burn(msg.sender, amount);
     }
 }
