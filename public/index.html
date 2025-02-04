@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EricsToken DApp</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>EricsToken DApp</h1>
+    <p id="ownerAddress"></p>
+
+    <h2>Provjeri stanje</h2>
+    <input type="text" id="balanceAddress" placeholder="Unesite adresu">
+    <button onclick="getBalance()">Provjeri stanje</button>
+    <p id="balanceResult"></p>
+
+    <h2>Prenesi tokene</h2>
+    <input type="text" id="transferTo" placeholder="Adresa primatelja">
+    <input type="text" id="transferAmount" placeholder="Količina">
+    <button onclick="transferTokens()">Prenesi</button>
+    <p id="transferResult"></p>
+
+    <h2>Mint tokene</h2>
+    <input type="text" id="mintAmount" placeholder="Količina">
+    <button onclick="mintTokens()">Mint</button>
+    <p id="mintResult"></p>
+
+    <h2>Burn tokene</h2>
+    <input type="text" id="burnAmount" placeholder="Količina">
+    <button onclick="burnTokens()">Burn</button>
+    <p id="burnResult"></p>
+
+    <!-- Uključivanje web3.js i app.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/4.16.0/web3.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
