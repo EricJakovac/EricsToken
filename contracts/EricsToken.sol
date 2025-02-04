@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 contract EricsToken {
     string public name = "EricsToken";
     string public symbol = "ETK";
-    uint8 public decimals = 18;
+    uint256 public decimals = 18;
     uint256 public totalSupply;
 
     address public owner;
@@ -21,7 +21,7 @@ contract EricsToken {
 
     constructor(uint256 _initialSupply) {
         owner = msg.sender;
-        totalSupply = _initialSupply * 10 ** uint256(decimals);
+        totalSupply = _initialSupply * 10 ** decimals;
         balanceOf[owner] = totalSupply;
     }
 
@@ -37,7 +37,7 @@ contract EricsToken {
     }
 
     function mint(uint256 _value) public onlyOwner returns (bool success) {
-        uint256 valueToMint = _value * 10 ** uint256(decimals);
+        uint256 valueToMint = _value * 10 ** decimals;
         totalSupply += valueToMint;
         balanceOf[owner] += valueToMint;
 
@@ -46,7 +46,7 @@ contract EricsToken {
     }
 
     function burn(uint256 _value) public onlyOwner returns (bool success) {
-        uint256 valueToBurn = _value * 10 ** uint256(decimals);
+        uint256 valueToBurn = _value * 10 ** decimals;
         require(balanceOf[owner] >= valueToBurn, "Insufficient balance to burn");
 
         totalSupply -= valueToBurn;
